@@ -1,3 +1,5 @@
+
+import Head from "next/head"
 "use client"
 
 import { Button } from "@/components/ui/button"
@@ -20,6 +22,14 @@ import {
 import { useState, useEffect, useRef } from "react"
 
 export default function IICESHomePage() {
+  // SEO básico para la página principal
+  // Puedes personalizar los valores según tu iglesia
+  const seo = {
+    title: "IICES - Iglesia Internacional de Cristo El Salvador",
+    description: "Una iglesia de fe, esperanza y amor en San Salvador. Todos son bienvenidos. Conoce nuestros servicios, ministerios y galería.",
+    url: "https://tudominio.vercel.app/", // Cambia por tu dominio real
+    image: "/Logo.png"
+  }
   // Scroll suave con offset personalizado
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
@@ -146,7 +156,23 @@ export default function IICESHomePage() {
   }
 
   return (
-  <div className="min-h-screen" style={{ background: '#000000', boxShadow: '0 8px 6px -6px white'}}>
+    <>
+      <Head>
+        <meta name="google-site-verification" content="NV2JmAqDT0tkIwDzuenPSArAR6O870s4Ys2EP2cvg54" />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.url} />
+        <meta property="og:image" content={seo.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={seo.image} />
+        <link rel="canonical" href={seo.url} />
+      </Head>
+      <div className="min-h-screen" style={{ background: '#000000', boxShadow: '0 8px 6px -6px white'}}>
       {/* ================= HEADER ================= */}
   <header className="bg-[#000000] text-white backdrop-blur-md sticky top-0 z-50 shadow" style={{ boxShadow: '0 4px 16px -4px rgba(255,255,255,0.25)' }}>
         <div className="container mx-auto px-4 sm:px-6 py-4">
@@ -699,5 +725,7 @@ export default function IICESHomePage() {
         </footer>
     {/* ...existing code... */}
     </div>
+    </>
   )
 }
+
