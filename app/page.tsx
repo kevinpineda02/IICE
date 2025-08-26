@@ -530,7 +530,7 @@ export default function IICESHomePage() {
     </section>
 
   {/* ================= GALERÍA ================= */}
-  <section id="gallery" className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style={{ backgroundImage: 'url(/nohemys-4.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+  <section id="gallery" className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style={{ backgroundImage: 'url(/charla-2.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
     <span
       aria-hidden="true"
       style={{
@@ -539,7 +539,7 @@ export default function IICESHomePage() {
         width: '100%',
         height: '100%',
         background: 'rgba(0,0,0,0.5)',
-        backdropFilter: 'blur(6px)',
+        backdropFilter: 'blur(5.5px)',
         WebkitBackdropFilter: 'blur(8px)',
         zIndex: 0,
         pointerEvents: 'none',
