@@ -65,14 +65,26 @@ export default function IICESHomePage() {
   const observedElementsRef = useRef<Set<Element>>(new Set())
 
   const galleryImages = [
-    "/",
-    "/",
-    "/",
-    "/",
-    "/",
-    "/",
-    "/",
-    "/",
+    "/aecongreso1.jpg",
+    "/Ae-sector.jpg",
+    "/Ae-Viaje.jpg",
+    "/niños-actividad.jpg",
+    "/niños-actividad2.jpg",
+    "/Evangelismo.jpg",
+    "/ae-3.jpg",
+    "/charla-2.jpg",
+    "/congreso-2.jpg",
+    "/actividad-2.jpg",
+    "/santaana.jpg",
+    "/pijamada.jpg",
+    "/bautismoles.jpg",
+    "/actividad-3.jpg",
+    "/bautismodenss.jpg",
+    "/actividad-4.jpg",
+    "/pies.jpg",
+    "/congreso-4.jpg",
+    "/nohemys-2.jpg",
+    "/nohemys-4.jpg",
   ]
 
   const openImageModal = (index: number) => {
@@ -393,19 +405,19 @@ export default function IICESHomePage() {
                 img: "/GR.jpg",
                 icon: Users,
                 title: "Ministerio GR",
-                desc: "Ministerio de jovenes donde crecen en su fe, amistad y valores en cristo",
+                desc: "Jovenes donde crecen en su fe, amistad y valores en cristo",
               },
               {
                 img: "/ae.jpg",
                 icon: Heart,
                 title: "Ministerio de AE",
-                desc: "Jovenes Universitarios, llamado Accion Estudiantil",
+                desc: "Jovenes Universitarios, llamado Accion Estudiantil donde se fomenta el crecimiento espiritual y académico.",
               },
               {
-                img: "/placeholder-abqql.png",
+                img: "/nohemys-2.jpg",
                 icon: BookOpen,
-                title: "Ministerio Nohemis",
-                desc: "...........",
+                title: "Ministerio Nohemys",
+                desc: "Nohemys es un ministerio de mujeres dedicado a la enseñanza y formación bíblica.",
               },
               {
                 img: "/medios.jpg",
@@ -420,22 +432,23 @@ export default function IICESHomePage() {
                 desc: "Adoración musical que eleva nuestros corazones a Dios",
               },
               {
-                img: "/",
+                img: "/familia.jpg",
                 icon: Heart,
                 title: "Ministerio de Familia",
                 desc: "Apoyo y cuidado para las familias de nuestra iglesia",
               },
               {
-                img: "/",
+                img: "/solteros.jpg",
                 icon: Users,
                 title: "Ministerio de Solteros",
-                desc: "Espacio de crecimiento y apoyo para solteros en su fe",
+                desc: "Apoyo y actividades para solteros en nuestra iglesia", 
               },
+              
               {
-                img: "/",
-                icon: BookOpen,
-                title: "Ministerio de Casados",
-                desc: "Acompañamiento en el crecimiento espiritual para parejas",
+                img: "/niños.jpg",
+                icon: Users,
+                title: "Ministerio de Niños",
+                desc: "Enseñanza y cuidado para los más pequeños de nuestra iglesia",
               },
               
             ].map((ministry, index) => (
@@ -517,7 +530,7 @@ export default function IICESHomePage() {
     </section>
 
   {/* ================= GALERÍA ================= */}
-  <section id="gallery" className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style={{ backgroundImage: 'url(/Galeria.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+  <section id="gallery" className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style={{ backgroundImage: 'url(/nohemys-4.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
     <span
       aria-hidden="true"
       style={{
@@ -617,12 +630,13 @@ export default function IICESHomePage() {
       {selectedImageIndex !== null && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={closeImageModal}>
           <div className="relative max-w-4xl max-h-full w-full h-full flex items-center justify-center">
-            {/* Close button */}
+            {/* Close button en la esquina superior derecha */}
             <button
               onClick={closeImageModal}
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-300"
+              className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/60 hover:bg-black/80 rounded-full flex items-center justify-center transition-all duration-300 group"
+              style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.25)' }}
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-7 h-7 text-white group-hover:scale-125 group-hover:brightness-150 group-hover:text-red-500 transition-all duration-300" />
             </button>
 
             {/* Previous button */}
@@ -631,7 +645,8 @@ export default function IICESHomePage() {
                 e.stopPropagation()
                 navigateImage("prev")
               }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-300"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/60 hover:bg-black/80 rounded-full flex items-center justify-center transition-colors duration-300"
+              style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.25)' }}
             >
               <ChevronLeft className="w-6 h-6 text-white" />
             </button>
@@ -642,7 +657,8 @@ export default function IICESHomePage() {
                 e.stopPropagation()
                 navigateImage("next")
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-300"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/60 hover:bg-black/80 rounded-full flex items-center justify-center transition-colors duration-300"
+              style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.25)' }}
             >
               <ChevronRight className="w-6 h-6 text-white" />
             </button>
@@ -656,7 +672,7 @@ export default function IICESHomePage() {
             />
 
             {/* Image counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/20 px-4 py-2 rounded-full">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 px-4 py-2 rounded-full">
               <span className="text-white text-sm">
                 {selectedImageIndex + 1} / {galleryImages.length}
               </span>
